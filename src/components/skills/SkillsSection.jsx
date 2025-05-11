@@ -3,10 +3,11 @@ import { motion } from 'framer-motion';
 import SkillCard from './SkillCard';
 import { TfiHtml5 } from "react-icons/tfi";
 import { IoLogoJavascript } from "react-icons/io5";
-import { SiTailwindcss } from "react-icons/si";
-import { FiCode, FiServer, FiDatabase, FiTool } from 'react-icons/fi'; // Example imports for icons
-import { FaSass, FaPhp, FaLaravel, FaNodeJs, FaPython, FaDjango, FaMysql, FaPostgres, FaMdb, FaRedis, FaFirebase, FaGitAlt, FaDocker, FaAws, FaGithubActions, FaFigma, FaReact, FaVuejs } from 'react-icons/fa'; // Example imports for other icons
-import { SiTestinglibrary } from 'react-icons/si'; // Example import
+import { DiRedis } from "react-icons/di";
+import { RiFirebaseFill } from "react-icons/ri";
+import { SiMysql, SiPostgresql, SiTailwindcss, SiGithubactions, SiTestinglibrary } from "react-icons/si";
+import { FiCode, FiServer, FiDatabase, FiTool } from 'react-icons/fi'; 
+import { FaSass, FaPhp, FaLaravel, FaNodeJs, FaPython, FaMdb, FaGit, FaDocker, FaAws, FaFigma, FaReact, FaVuejs } from 'react-icons/fa'; 
 
 const skills = {
   frontend: [
@@ -26,17 +27,17 @@ const skills = {
     { name: 'Python', level: 70, icon: <FaPython /> },  // Added icon
   ],
   database: [
-    { name: 'MySQL', level: 85, icon: <FaMysql /> },     // Added icon
-    { name: 'PostgreSQL', level: 80, icon: <FaPostgres /> }, // Added icon
+    { name: 'MySQL', level: 85, icon: <SiMysql /> },     // Added icon
+    { name: 'PostgreSQL', level: 80, icon: <SiPostgresql /> }, // Added icon
     { name: 'MongoDB', level: 75, icon: <FaMdb /> },      // Added icon
-    { name: 'Redis', level: 70, icon: <FaRedis /> },     // Added icon
-    { name: 'Firebase', level: 80, icon: <FaFirebase /> },// Added icon
+    { name: 'Redis', level: 70, icon: <DiRedis /> },     // Added icon
+    { name: 'Firebase', level: 80, icon: <RiFirebaseFill /> },// Added icon
   ],
   tools: [
-    { name: 'Git', level: 90, icon: <FaGitAlt /> },      // Added icon
+    { name: 'Git', level: 90, icon: <FaGit /> },      // Added icon
     { name: 'Docker', level: 80, icon: <FaDocker /> },    // Added icon
     { name: 'AWS', level: 75, icon: <FaAws /> },        // Added icon
-    { name: 'CI/CD', level: 70, icon: <FaGithubActions /> }, // Using a generic actions icon
+    { name: 'CI/CD', level: 70, icon: <SiGithubactions /> }, // Using a generic actions icon
     { name: 'Testing', level: 80, icon: <SiTestinglibrary /> }, // Added icon
   ],
 }
