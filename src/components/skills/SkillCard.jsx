@@ -7,7 +7,7 @@ const SkillCard = ({ skill, index }) => {
 
   return (
     <motion.div
-      className="flex flex-col items-center justify-center p-6 h-40 w-50 rounded-lg bg-dark-100 dark:bg-dark-700 text-white shadow-lg" // Adjusted sizing, background, rounded corners, and centering
+      className="flex flex-col items-center justify-center p-6 h-40 w-50 rounded-lg bg-dark-100 dark:bg-dark-700 text-white shadow-lg" 
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -15,7 +15,7 @@ const SkillCard = ({ skill, index }) => {
       whileHover={{
         y: -8, // Lift effect on hover
         boxShadow: '0 15px 30px -5px rgba(0, 0, 0, 0.3), 0 8px 16px -8px rgba(0, 0, 0, 0.2)', // More pronounced shadow
-        transition: { duration: 0.3 }, // Smooth hover transition
+        transition: { duration: 0.3 }, 
       }}
     // Optional: Add a subtle scale effect on hover
     // whileHover={{ scale: 1.05, y: -8, boxShadow: '...' }}

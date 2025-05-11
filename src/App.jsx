@@ -16,6 +16,7 @@ import NotFound from './pages/NotFound'
 
 // Context
 import { useTheme } from './context/ThemeContext'
+import ServicesSection from './components/services/ServicesSection'
 
 function App() {
   const location = useLocation()
@@ -39,6 +40,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="/services" element={<ServicesSection />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
