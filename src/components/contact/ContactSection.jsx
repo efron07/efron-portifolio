@@ -6,9 +6,9 @@ import { FiMail, FiGithub, FiLinkedin, FiTwitter, FiSend, FiPhone } from 'react-
 import emailjs from '@emailjs/browser';
 
 
-const SERVICE_ID = 'service_s2kqing'; 
-const TEMPLATE_ID = 'template_k6feogq'; 
-const PUBLIC_KEY = 'ZaHIMqZC1iXXvLl9_'; 
+const SERVICE_ID ='service_s2kqing'; 
+const TEMPLATE_ID ='template_k6feogq'; 
+const PUBLIC_KEY ='ZaHIMqZC1iXXvLl9_'; 
 
 
 const ContactSection = () => {
