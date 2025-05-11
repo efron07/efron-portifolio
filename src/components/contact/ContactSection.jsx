@@ -2,6 +2,15 @@ import { useState, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { FiMail, FiGithub, FiLinkedin, FiTwitter, FiSend, FiPhone } from 'react-icons/fi'
 
+// emailjs
+import emailjs from '@emailjs/browser';
+
+
+const SERVICE_ID = 'service_s2kqing'; 
+const TEMPLATE_ID = 'template_k6feogq'; 
+const PUBLIC_KEY = 'it0MOZldqkZSMduMz'; 
+
+
 const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -22,43 +31,67 @@ const ContactSection = () => {
     })
   }
   
+  
+
+  
+  // Initialize EmailJS with your public key (usually done once in your app setup)
+  emailjs.init({
+    publicKey: PUBLIC_KEY,
+  });
   // Handle form submission
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    
-    // Simulate form submission - In a real app, replace with EmailJS or backend API
+    e.preventDefault();
+    setIsSubmitting(true);
+
     try {
-      // Simulate API delay
-      await new Promise(resolve => setTimeout(resolve, 1500))
-      
-      // Success simulation
-      setSubmitResult({
-        success: true,
-        message: 'Message sent successfully! I will respond shortly.',
-      })
-      
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
-      })
-      
-      // Clear success message after 5 seconds
-      setTimeout(() => {
-        setSubmitResult(null)
-      }, 5000)
+      // Send email using EmailJS
+      const result = await emailjs.send(SERVICE_ID, TEMPLATE_ID, {
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        // Add any other template parameters your EmailJS template expects
+      });
+
+      console.log('EmailJS response:', result);
+
+      if (result.status === 200) {
+        setSubmitResult({
+          success: true,
+          message: 'Message sent successfully! I will respond shortly.',
+        });
+
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
+        });
+
+        // Clear success message after 5 seconds
+        setTimeout(() => {
+          setSubmitResult(null);
+        }, 5000);
+
+      } else {
+        // Handle non-200 status codes from EmailJS if necessary
+        setSubmitResult({
+          success: false,
+          message: `Failed to send message. EmailJS status: ${result.status}`,
+        });
+      }
+
     } catch (error) {
+      console.error('EmailJS error:', error);
       setSubmitResult({
         success: false,
         message: 'Failed to send message. Please try again.',
-      })
+      });
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
-  }
+  };
   
   // Contact info items
   const contactInfo = [
