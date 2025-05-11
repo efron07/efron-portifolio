@@ -94,3 +94,34 @@ canvas {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+/* In your CSS file (e.g., index.css or a dedicated component CSS file) */
+
+.skill-card-gradient-border {
+  position: relative;
+  /* Ensure the card is positioned for the pseudo-element */
+  z-index: 1;
+}
+
+.skill-card-gradient-border::before {
+  content: '';
+  position: absolute;
+  top: -2px; /* Adjust to control the border thickness */
+  left: -2px; /* Adjust to control the border thickness */
+  right: -2px; /* Adjust to control the border thickness */
+  bottom: -2px; /* Adjust to control the border thickness */
+  background: linear-gradient(45deg, #ff00cc, #3333ff); /* Your desired gradient colors */
+  z-index: -1;
+  filter: blur(8px); /* Adjust blur amount */
+  opacity: 0; /* Start hidden */
+  transition: opacity 0.3s ease-in-out; /* Smooth transition */
+  border-radius: 10px; /* Match the card's border-radius */
+}
+
+.skill-card-gradient-border:hover::before {
+  opacity: 1; /* Show on hover */
+}
+
+/* You might also add a subtle box-shadow directly on the card for depth */
+.skill-card-gradient-border:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}

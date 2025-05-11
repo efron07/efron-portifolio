@@ -1,36 +1,36 @@
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
 
 const SkillCard = ({ skill, index }) => {
+  // Destructure skill to get name and icon (assuming you add 'icon' to your skills data)
+  // We no longer need 'level'
+  const { name, icon } = skill;
+
   return (
     <motion.div
-      className="card p-6 h-full"
+      className="flex flex-col items-center justify-center p-6 h-40 w-40 rounded-lg bg-dark-100 dark:bg-dark-700 text-white shadow-lg" // Adjusted sizing, background, rounded corners, and centering
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       viewport={{ once: true, amount: 0.2 }}
-      whileHover={{ 
-        y: -5,
-        boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+      whileHover={{
+        y: -8, // Lift effect on hover
+        boxShadow: '0 15px 30px -5px rgba(0, 0, 0, 0.3), 0 8px 16px -8px rgba(0, 0, 0, 0.2)', // More pronounced shadow
+        transition: { duration: 0.3 }, // Smooth hover transition
       }}
+    // Optional: Add a subtle scale effect on hover
+    // whileHover={{ scale: 1.05, y: -8, boxShadow: '...' }}
     >
-      <div className="flex justify-between items-center mb-4">
-        <h3 className="text-xl font-semibold">{skill.name}</h3>
-        <span className="text-sm font-semibold text-primary-500">
-          {skill.level}%
-        </span>
+      {/* Skill Icon */}
+      <div className="text-4xl text-primary-400 mb-3"> {/* Adjust icon size and color */}
+        {icon}
       </div>
-      
-      <div className="w-full bg-dark-200 dark:bg-dark-700 rounded-full h-2.5 mb-2">
-        <motion.div 
-          className="bg-primary-500 h-2.5 rounded-full"
-          initial={{ width: 0 }}
-          whileInView={{ width: `${skill.level}%` }}
-          transition={{ duration: 1, delay: 0.2 }}
-          viewport={{ once: true }}
-        />
-      </div>
+
+      {/* Skill Name */}
+      <h3 className="text-lg font-semibold text-center">{name}</h3> {/* Centered text */}
+
+      {/* Removed: Progress bar and level percentage */}
     </motion.div>
-  )
+  );
 }
 
-export default SkillCard
+export default SkillCard;
