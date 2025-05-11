@@ -7,7 +7,7 @@ const SkillCard = ({ skill, index }) => {
 
   return (
     <motion.div
-      className="flex flex-col items-center justify-center p-6 h-40 w-40 rounded-lg bg-dark-100 dark:bg-dark-700 text-white shadow-lg" // Adjusted sizing, background, rounded corners, and centering
+      className="flex flex-col items-center justify-center p-6 h-40 w-50 rounded-lg bg-dark-100 dark:bg-dark-700 text-white shadow-lg" // Adjusted sizing, background, rounded corners, and centering
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
