@@ -1,18 +1,21 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import SkillCard from './SkillCard';
-import { FiCode, FiServer, FiDatabase, FiTool, FiHtml5, FiCss3, Fiッと, FiReact, FiVue, FiTailwind, FiFigma } from 'react-icons/fi'; // Example imports for icons
+import { TfiHtml5 } from "react-icons/tfi";
+import { IoLogoJavascript } from "react-icons/io5";
+import { FiCode, FiServer, FiDatabase, FiTool,FiReact, FiVue, FiTailwind, FiFigma } from 'react-icons/fi'; // Example imports for icons
 import { FaSass, FaPhp, FaLaravel, FaNodeJs, FaPython, FaDjango, FaMysql, FaPostgres, FaMdb, FaRedis, FaFirebase, FaGitAlt, FaDocker, FaAws, FaGithubActions } from 'react-icons/fa'; // Example imports for other icons
 import { SiTestinglibrary } from 'react-icons/si'; // Example import
 
 const skills = {
   frontend: [
-    { name: 'HTML/CSS', level: 90, icon: <FiHtml5 /> }, // Added icon
-    { name: 'JavaScript', level: 85, icon: <Fiッと /> }, // Added icon (Using a generic JS icon)
+    { name: 'HTML/CSS', level: 90, icon: <TfiHtml5 /> }, // Added icon
+    { name: 'JavaScript', level: 85, icon: <IoLogoJavascript /> }, // Added icon (Using a generic JS icon)
     { name: 'React', level: 90, icon: <FiReact /> },    // Added icon
     { name: 'Vue.js', level: 75, icon: <FiVue /> },      // Added icon
     { name: 'Tailwind CSS', level: 85, icon: <FiTailwind /> }, // Added icon
     { name: 'SASS/SCSS', level: 80, icon: <FaSass /> },   // Added icon
+    { name: 'Figma', level: 70, icon: <FiFigma /> },      // Added icon
   ],
   backend: [
     { name: 'PHP', level: 85, icon: <FaPhp /> },        // Added icon
