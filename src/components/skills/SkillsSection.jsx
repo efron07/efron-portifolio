@@ -90,7 +90,7 @@ const SkillsSection = () => {
         </div>
 
         {/* Skills display */}
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4"> {/* Grid layout maintained */}
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-6"> {/* Grid layout maintained */}
           {/* The map remains the same, passing the skill object which now includes 'icon' */}
           {skills[activeCategory].map((skill, index) => (
             <SkillCard
