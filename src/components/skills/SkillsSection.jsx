@@ -24,7 +24,6 @@ const skills = {
     { name: 'Node.js', level: 80, icon: <FaNodeJs /> },  // Added icon
     { name: 'Express', level: 75, icon: <FiServer /> }, // Using a generic server icon
     { name: 'Python', level: 70, icon: <FaPython /> },  // Added icon
-    { name: 'Django', level: 65, icon: <FaDjango /> },  // Added icon
   ],
   database: [
     { name: 'MySQL', level: 85, icon: <FaMysql /> },     // Added icon
