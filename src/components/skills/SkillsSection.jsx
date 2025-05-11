@@ -5,6 +5,7 @@ import { TfiHtml5 } from "react-icons/tfi";
 import { IoLogoJavascript } from "react-icons/io5";
 import { DiRedis } from "react-icons/di";
 import { RiFirebaseFill } from "react-icons/ri";
+import { BiLogoFirebase } from "react-icons/bi";
 import { SiMysql, SiPostgresql, SiTailwindcss, SiGithubactions, SiTestinglibrary } from "react-icons/si";
 import { FiCode, FiServer, FiDatabase, FiTool } from 'react-icons/fi'; 
 import { FaSass, FaPhp, FaLaravel, FaNodeJs, FaPython, FaMdb, FaGit, FaDocker, FaAws, FaFigma, FaReact, FaVuejs } from 'react-icons/fa'; 
@@ -31,7 +32,7 @@ const skills = {
     { name: 'PostgreSQL', level: 80, icon: <SiPostgresql /> }, // Added icon
     { name: 'MongoDB', level: 75, icon: <FaMdb /> },      // Added icon
     { name: 'Redis', level: 70, icon: <DiRedis /> },     // Added icon
-    { name: 'Firebase', level: 80, icon: <RiFirebaseFill /> },// Added icon
+    { name: 'Firebase', level: 80, icon: <BiLogoFirebase /> },// Added icon
   ],
   tools: [
     { name: 'Git', level: 90, icon: <FaGit /> },      // Added icon
